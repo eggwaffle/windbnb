@@ -1,0 +1,19 @@
+.card {
+  @apply m-5;
+}
+
+.photo {
+  @apply rounded-xl;
+}
+
+.tag-row {
+  @apply flex justify-between text-xs;
+}
+
+.rating {
+  @apply flex;
+}
+
+.title {
+  @apply text-sm;
+}

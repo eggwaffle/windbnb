@@ -1,0 +1,8 @@
+/* In the project folder, run 'sass src/index.scss:src/index.css --source-map -w' */
+
+@import "./scss/base/reset";
+@import "./scss/base/typography";
+
+@import "./scss/components/card";
+@import "./scss/components/cards";
+@import "./scss/components/header";

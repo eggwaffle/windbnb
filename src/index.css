@@ -1,13 +1,35 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* In the project folder, run 'sass src/index.scss:src/index.css --source-map -w' */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans+JP&family=Poppins&family=Ubuntu+Mono&display=swap");
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.card {
+  @apply m-5;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.photo {
+  @apply rounded-xl;
 }
+
+.tag-row {
+  @apply flex justify-between text-xs;
+}
+
+.rating {
+  @apply flex;
+}
+
+.title {
+  @apply text-sm;
+}
+
+.card-grid {
+  @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4;
+}
+
+.header {
+  @apply flex justify-between;
+}
+
+/*# sourceMappingURL=index.css.map */
