@@ -2,17 +2,20 @@
 import Card from './Card';
 
 function Cards(props) {
+  const card = props.stayList.map((stay) =>
+    <Card
+      key={stay.title}
+      photo={stay.photo}
+      superHost={stay.superHost}
+      type={stay.type}
+      beds={stay.beds}
+      rating={stay.rating}
+      title={stay.title}
+    />
+  )
   return (
     <div className='card-grid'>
-      {props.stayList.map((d) => (
-          <Card
-            key={d.id}
-            photo={d.photo}
-            type={d.type}
-            rating={d.rating}
-            title={d.title}
-          />
-      ))}
+      {card}
     </div>
   )};
 

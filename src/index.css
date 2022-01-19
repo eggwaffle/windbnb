@@ -4,20 +4,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.skeleton {
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    @apply bg-gray-300;
+  }
+  100% {
+    @apply bg-gray-100;
+  }
+}
 .card {
   @apply m-5;
 }
 
 .photo {
-  @apply rounded-xl;
+  @apply rounded-xl w-full h-56 object-cover;
 }
 
 .tag-row {
-  @apply flex justify-between text-xs;
+  @apply m-1 flex justify-between items-center text-xs;
+}
+
+.tag {
+  @apply flex items-center;
+}
+
+.super-host {
+  @apply mr-1 p-1 border-solid border-2 rounded-lg uppercase;
 }
 
 .rating {
-  @apply flex;
+  @apply flex items-center;
 }
 
 .title {
@@ -25,7 +45,7 @@
 }
 
 .card-grid {
-  @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4;
+  @apply grid grid-cols-1 md:grid-cols-3;
 }
 
 .header {
