@@ -10,6 +10,7 @@ function Select({ stayCity, setStayCity }) {
       >
         <option value="" disabled hidden>Add location</option>
         <option value="Helsinki">Helsinki</option>
+        <option value="Turku">Turku</option>
         <option value="Oulu">Oulu</option>
       </select>
   )
