@@ -4,11 +4,14 @@
 import logo from "../assets/images/logo.svg";
 import Filterbar from "./Filterbar";
 
-function Header({ data, setData}) {
+function Header({ fullStayList, setStayListState}) {
   return (
     <header className="header">
       <img src={logo} className="App-logo" alt="logo" />
-      <Filterbar data={data} setData={setData}/>
+      <Filterbar
+        fullStayList={fullStayList}
+        setStayListState={setStayListState}
+      />
     </header>
   );
 };

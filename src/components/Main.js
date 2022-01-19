@@ -3,7 +3,7 @@
 import Cards from "./Cards";
 
 function Main(props) {
-  let numStay = '';
+  let numStay = "";
   if (props.stayList.length > 12) {
     numStay = `12+ stays`;
   } else if (props.stayList.length === 0) {
@@ -12,7 +12,7 @@ function Main(props) {
     numStay = `${props.stayList.length} stays`;
   };
   return (
-    <main className='my-8 font-poppins font-bold text-xl text-[#333333]'>
+    <main className="my-8 font-poppins font-bold text-xl text-[#333333]">
       <div className="flex justify-between">
         <h1>
           Stays in Finland
