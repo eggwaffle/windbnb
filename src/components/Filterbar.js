@@ -13,6 +13,7 @@ function Filterbar({ fullStayList, setStayListState}) {
   return (
     <div>
       <Select
+        fullStayList={fullStayList}
         stayCity={stayCity}
         setStayCity={setStayCity}
       />
@@ -24,7 +25,7 @@ function Filterbar({ fullStayList, setStayListState}) {
         onChange={(e) => setTotalGuest(e.target.value)}
         required
       />
-      <button onClick={handleFilter}>Click me</button>
+      <button onClick={handleFilter}>Search</button>
     </div>
   );
 };

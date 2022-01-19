@@ -1,4 +1,10 @@
-function Select({ stayCity, setStayCity }) {
+function Select({ fullStayList, stayCity, setStayCity }) {
+  let cityArr = [];
+  fullStayList.map(d => cityArr.push(d.city))
+  const cityList = [...new Set(cityArr)]
+  const option = cityList.map((city) =>
+    <option key={city} value={city}>{city}</option>
+  )
   return (
     <select
         type="text"
@@ -9,9 +15,7 @@ function Select({ stayCity, setStayCity }) {
         required
       >
         <option value="" disabled hidden>Add location</option>
-        <option value="Helsinki">Helsinki</option>
-        <option value="Turku">Turku</option>
-        <option value="Oulu">Oulu</option>
+        {option}
       </select>
   )
 };
