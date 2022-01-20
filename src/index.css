@@ -4,6 +4,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.button {
+  @apply p-2;
+}
+
 .skeleton {
   animation: skeleton-loading 1s linear infinite alternate;
 }
@@ -48,8 +52,34 @@
   @apply grid grid-cols-1 md:grid-cols-3;
 }
 
+.drawer-container {
+  @apply absolute left-0 top-0 bg-white;
+}
+
+.filterdrawer {
+  @apply m-5;
+}
+
+.option {
+  @apply flex flex-col;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
 .header {
   @apply flex justify-between;
+}
+
+.input {
+  @apply border-2;
+}
+
+.option {
+  @apply list-none cursor-pointer;
 }
 
 /*# sourceMappingURL=index.css.map */
