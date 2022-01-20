@@ -1,33 +1,25 @@
-//https://stackoverflow.com/questions/55028583/how-do-i-call-setstate-from-another-component-in-reactjs
-
-import { useState } from "react";
-import Select from "./Select";
-
-function Filterbar({ fullStayList, setStayListState}) {
-  const [stayCity, setStayCity] = useState("");
-  const [totalGuest, setTotalGuest] = useState(0);
-  const filteredData = fullStayList.filter(
-    stay => stay.maxGuests >= totalGuest && stay.city === stayCity
-  );
-  const handleFilter = () => setStayListState(filteredData);
+import Button from "./Button";
+function Select(props) {
   return (
     <div>
-      <Select
-        fullStayList={fullStayList}
-        stayCity={stayCity}
-        setStayCity={setStayCity}
-      />
-      <input
-        type="number"
-        name="totalGuest"
-        placeholder="0"
-        value={totalGuest}
-        onChange={(e) => setTotalGuest(e.target.value)}
-        required
-      />
-      <button onClick={handleFilter}>Search</button>
+      <Button
+        onClick={props.onClick}
+        buttonContent={props.stayCity + props.stayCountry }
+        />
+      <Button
+        onClick={props.onClick}
+        buttonContent={props.guest}
+        />
+      <Button
+        onClick={props.onClick}
+        buttonContent={
+        <span className="material-icons">
+          search
+        </span>
+      }
+    />
     </div>
-  );
+  )
 };
 
-export default Filterbar;
+export default Select;

@@ -15,7 +15,7 @@ function Card(props) {
   if (props.beds !==null) beds = `, ${props.beds} beds`;
 
   return (
-    <div className='card' id={props.id}>
+    <div className='card'>
       <img className="photo skeleton" src={props.photo} alt='hotel room'></img>
       <div className="tag-row">
         <div className="tag">
