@@ -10,7 +10,7 @@ function Number(props) {
         <input
           type="number"
           className="p-0 w-8 border-none bg-[#F2F2F2] text-center text-gray-1"
-          onChange={e => props.setGuest(e.target.value)}
+          onChange={() => props.setGuest(props.numGuest)}
           value={props.numGuest}
         />
         <button type="button" id="removeButton" onClick={() => props.setGuest(props.numGuest-1)} className="inline-block align-middle mx-1 p-1 rounded bg-[#E0E0E0] text-gray-3">
