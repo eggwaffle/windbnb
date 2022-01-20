@@ -1,7 +1,4 @@
-//https://stackoverflow.com/questions/55028583/how-do-i-call-setstate-from-another-component-in-reactjs
-
 import { useState, useEffect } from "react";
-import Button from "./Button";
 import Filterdrawer from "./Filterdrawer";
 import Filterbar from "./Filterbar";
 
@@ -30,13 +27,18 @@ function Filter({ fullStayList, setStayListState}) {
     setAdultGuest(0);
   }
   if (childGuest < 0) {
-    setAdultGuest(0);
+    setChildGuest(0);
   }
   if (totalGuest === 0 ) {
     guest = `Add guests`;
   } else {
     guest = `${totalGuest} guests`;
   }
+
+  useEffect(() => {
+    setTotalGuest(adultGuest + childGuest)
+  }, [adultGuest, childGuest]);
+
   return (
     <div>
       <div>

@@ -2,7 +2,6 @@
 
 import logo from "../assets/images/logo.svg";
 import Filter from "./Filter";
-import Filterdrawer from "./Filterdrawer";
 
 function Header({ fullStayList, setStayListState}) {
   return (

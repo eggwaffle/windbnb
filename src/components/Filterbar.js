@@ -4,7 +4,7 @@ function Select(props) {
     <div>
       <Button
         onClick={props.onClick}
-        buttonContent={props.stayCity + props.stayCountry }
+        buttonContent={props.stayCity + `, ` + props.stayCountry}
         />
       <Button
         onClick={props.onClick}

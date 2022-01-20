@@ -1,5 +1,8 @@
 function Option(props) {
-  const choose = () => props.setStayCity(props.option[0]);
+  const choose = () => {
+    props.setStayCity(props.option[0]);
+    props.setStayCountry(props.option[1]);
+  }
   return (
     <li
       onClick={choose}
