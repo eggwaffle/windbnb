@@ -35,7 +35,7 @@
 
 ## Overview
 
-![screenshot](https://raw.githubusercontent.com/eggwaffle/windbnb/main/screenshot.png)
+![screenshot](screenshot.png)
 
 Challenge: Create a small version of Airbnb - Windbnb with given data.
 
