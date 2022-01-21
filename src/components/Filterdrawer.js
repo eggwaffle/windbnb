@@ -9,9 +9,9 @@ function Filterdrawer(props) {
   const [ numHidden, setNumHidden] = useState(true);
   let locationArr = [];
   let locationList = [];
-  let numClass = "hidden";
+  let numClass = "num-class hidden";
 
-  numHidden ? numClass = "hidden" : numClass = "";
+  numHidden ? numClass = "num-class hidden" : numClass = "num-class";
   const showCity = () => {
     setOptionHidden(false);
     setNumHidden(true);
@@ -21,7 +21,7 @@ function Filterdrawer(props) {
     setNumHidden(false);
   }
 
-  props.fullStayList.map(d => locationArr.push([d.city, d.country]))
+  props.fullStayList.map(d => locationArr.push([d.city, `, ${d.country}`]))
   locationArr.filter((location) => {
       var i = locationList.findIndex(loc => loc[0] === location[0]);
       if (i <= -1) {
@@ -32,43 +32,49 @@ function Filterdrawer(props) {
   const option = locationList.map((location) =>
     <Option
       key={location[0]}
+      icon="location_on"
+      option={location}
       setStayCity={props.setStayCity}
       setStayCountry={props.setStayCountry}
-      option={location}
     />
   )
   return (
-    <div className="filterdrawer">
-      <Button
-        onClick={showCity}
-        buttonContent={props.stayCity + `, ` + props.stayCountry}
+    <div className={props.filterdrawerClass}>
+      <div className="drawer-bar">
+        <Button
+          className = ""
+          onClick={showCity}
+          buttonContent={props.stayCity + props.stayCountry}
         />
-      <Button
-        onClick={showNum}
-        buttonContent={props.guest}
+        <Button
+          onClick={showNum}
+          buttonContent={props.guest}
         />
-      <div className="option">
-        {optionHidden
-          ? null
-          : option}
-      </div>
-      <div className={numClass}>
-        <Number
-          label="Adults"
-          description="Ages 13 or above"
-          numGuest={props.adultGuest}
-          setGuest={props.setAdultGuest}
-          setTotalGuest={props.setTotalGuest}
-        />
-        <Number
-          label="Child"
-          description="Ages 2-12"
-          numGuest={props.childGuest}
-          setGuest={props.setChildGuest}
-          setTotalGuest={props.setTotalGuest}
-        />
-      </div>
         <Button onClick={props.handleFilter} buttonContent={"Search"}/>
+      </div>
+      <div>
+        <div className="option">
+          {optionHidden
+            ? null
+            : option}
+        </div>
+        <div className={numClass}>
+          <Number
+            label="Adults"
+            description="Ages 13 or above"
+            numGuest={props.adultGuest}
+            setGuest={props.setAdultGuest}
+            setTotalGuest={props.setTotalGuest}
+          />
+          <Number
+            label="Child"
+            description="Ages 2-12"
+            numGuest={props.childGuest}
+            setGuest={props.setChildGuest}
+            setTotalGuest={props.setTotalGuest}
+          />
+        </div>
+      </div>
     </div>
   )
 };

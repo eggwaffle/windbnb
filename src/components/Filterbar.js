@@ -1,10 +1,10 @@
 import Button from "./Button";
 function Select(props) {
   return (
-    <div>
+    <div className="filter-bar">
       <Button
         onClick={props.onClick}
-        buttonContent={props.stayCity + `, ` + props.stayCountry}
+        buttonContent={props.stayCity + props.stayCountry}
         />
       <Button
         onClick={props.onClick}

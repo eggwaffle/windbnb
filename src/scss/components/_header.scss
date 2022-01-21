@@ -4,7 +4,11 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
-  .header {
-  @apply flex justify-between;
+.logo {
+  @apply w-20 md:w-40;
+}
+
+.header {
+  @apply flex flex-col md:flex-row justify-between;
 }
 

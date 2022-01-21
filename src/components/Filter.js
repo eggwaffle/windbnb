@@ -9,10 +9,17 @@ function Filter({ fullStayList, setStayListState}) {
   const [adultGuest, setAdultGuest] = useState(0);
   const [childGuest, setChildGuest] = useState(0);
   const [expand, setExpand] = useState(false);
-  let filterdrawerClass = "";
+  let overlayClass = "filter-overlay hidden";
+  let filterdrawerClass = "filterdrawer hidden";
   let guest = `Add guests`;
 
-  expand ? filterdrawerClass = "drawer-container" : filterdrawerClass = "drawer-container hidden";
+  if (expand) {
+    filterdrawerClass = "filterdrawer";
+    overlayClass = "filter-overlay";
+  } else {
+    filterdrawerClass = "filterdrawer hidden";
+    overlayClass = "filter-overlay hidden";
+  }
 
   const filteredData = fullStayList.filter(
     stay => stay.maxGuests >= totalGuest && stay.city === stayCity
@@ -41,34 +48,32 @@ function Filter({ fullStayList, setStayListState}) {
 
   return (
     <div>
-      <div>
-        <Filterbar
-          fullStayList={fullStayList}
-          stayCity={stayCity}
-          stayCountry={stayCountry}
-          guest={guest}
-          onChange={handleCityChange}
-          onClick={() => setExpand(true)}
-        />
-      </div>
-      <div className={filterdrawerClass}>
-        <Filterdrawer
-          fullStayList={fullStayList}
-          stayCity={stayCity}
-          setStayCity={setStayCity}
-          stayCountry={stayCountry}
-          setStayCountry={setStayCountry}
-          setStayListState={setStayListState}
-          guest={guest}
-          adultGuest={adultGuest}
-          childGuest={childGuest}
-          setAdultGuest={setAdultGuest}
-          setChildGuest={setChildGuest}
-          setTotalGuest={setTotalGuest}
-          handleFilter={handleFilter}
-        />
-      </div>
-    </div>
+      <Filterbar
+        fullStayList={fullStayList}
+        stayCity={stayCity}
+        stayCountry={stayCountry}
+        guest={guest}
+        onChange={handleCityChange}
+        onClick={() => setExpand(true)}
+      />
+      <div className={overlayClass} onClick={() => setExpand(false)}></div>
+      <Filterdrawer
+        filterdrawerClass={filterdrawerClass}
+        fullStayList={fullStayList}
+        stayCity={stayCity}
+        setStayCity={setStayCity}
+        stayCountry={stayCountry}
+        setStayCountry={setStayCountry}
+        setStayListState={setStayListState}
+        guest={guest}
+        adultGuest={adultGuest}
+        childGuest={childGuest}
+        setAdultGuest={setAdultGuest}
+        setChildGuest={setChildGuest}
+        setTotalGuest={setTotalGuest}
+        handleFilter={handleFilter}
+      />
+  </div>
   );
 }
 

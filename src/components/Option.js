@@ -4,12 +4,15 @@ function Option(props) {
     props.setStayCountry(props.option[1]);
   }
   return (
-    <li
+    <div className="option-item">
+      <span className="material-icons">{props.icon}</span>
+      <li
       onClick={choose}
       name={props.option[0]}
     >
-      {`${props.option[0]}, ${props.option[1]}`}
+      {`${props.option[0]}${props.option[1]}`}
     </li>
+    </div>
   )
 };
 
