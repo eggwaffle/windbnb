@@ -1,10 +1,8 @@
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
+.logo {
+  @apply w-20 md:w-40 mb-2 lg:mb-0;
 }
 
-  .header {
-  @apply flex justify-between;
+.header {
+  @apply flex flex-col md:flex-row justify-between;
 }
 

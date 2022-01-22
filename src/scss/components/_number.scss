@@ -1,0 +1,23 @@
+.number {
+  @apply text-sm;
+}
+
+.number label {
+  @apply text-gray-333333 font-bold;
+}
+
+.number p {
+  @apply text-gray-BDBDBD;
+}
+
+.counter-box {
+  @apply flex p-1 justify-center align-middle;
+}
+
+.counter-box button {
+  @apply w-[2rem] mx-1 rounded border-2 border-gray-828282 text-gray-828282;
+}
+
+.counter {
+  @apply p-2 w-8 border-none text-center text-gray-333333 font-bold;
+}

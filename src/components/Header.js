@@ -6,7 +6,7 @@ import Filter from "./Filter";
 function Header({ fullStayList, setStayListState}) {
   return (
     <header className="header">
-      <img src={logo} className="App-logo" alt="logo" />
+      <img src={logo} className="logo" alt="logo" />
       <Filter
         fullStayList={fullStayList}
         setStayListState={setStayListState}

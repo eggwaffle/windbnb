@@ -20,21 +20,29 @@
 }
 
 .tag-row {
-  @apply m-1 flex justify-between items-center text-xs;
+  @apply m-1 flex justify-between items-center text-xs text-gray-4F4F4F font-medium;
 }
 
 .tag {
   @apply flex items-center;
 }
 
+.tag p {
+  @apply text-gray-828282;
+}
+
 .super-host {
-  @apply mr-1 p-1 border-solid border-2 rounded-lg uppercase;
+  @apply mr-1 p-1 border-solid border-2 rounded-lg uppercase font-semibold;
 }
 
 .rating {
   @apply flex items-center;
 }
 
+.rating span {
+  @apply text-red-EB5757;
+}
+
 .title {
-  @apply text-sm;
+  @apply text-sm font-bold;
 }

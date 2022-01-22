@@ -1,0 +1,11 @@
+.filter-bar {
+  @apply flex justify-between rounded-2xl shadow text-2xl;
+}
+
+.searchbar-button {
+  @apply text-red-EB5757;
+}
+
+.bar-display {
+  @apply border-r pr-5;
+}

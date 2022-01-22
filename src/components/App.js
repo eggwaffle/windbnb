@@ -9,8 +9,9 @@ import Main from "./Main";
 function App() {
   const fullStayList = stays;
   const [stayListState, setStayListState] = useState(stays);
+
   return (
-    <div className="mx-10 my-5">
+    <div className="app">
       <Header
         fullStayList={fullStayList}
         setStayListState={setStayListState}
