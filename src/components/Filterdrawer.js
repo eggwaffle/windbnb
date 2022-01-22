@@ -55,7 +55,7 @@ function Filterdrawer(props) {
       </div>
       <div className = "drawer-bar">
         <div className = "drawer-button-box">
-          <h2>location</h2>
+          <h2>LOCATION</h2>
           <Button
             className = {props.locationButtonClass}
             onClick={showCity}
@@ -63,7 +63,7 @@ function Filterdrawer(props) {
           />
         </div>
         <div className="drawer-button-box">
-          <h2>guests</h2>
+          <h2>GUESTS</h2>
           <Button
             className = {props.guestButtonClass}
             onClick={showNum}
