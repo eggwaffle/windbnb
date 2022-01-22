@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Filterdrawer from "./Filterdrawer";
 import Filterbar from "./Filterbar";
 
-function Filter({ fullStayList, setStayListState}) {
+function Filter({ fullStayList, setStayListState }) {
   const [stayCity, setStayCity] = useState("Add location");
   const [stayCountry, setStayCountry] = useState("");
   const [totalGuest, setTotalGuest] = useState(0);
@@ -11,6 +11,8 @@ function Filter({ fullStayList, setStayListState}) {
   const [expand, setExpand] = useState(false);
   let overlayClass = "filter-overlay hidden";
   let filterdrawerClass = "filterdrawer hidden";
+  let locationButtonClass = `drawer-button-empty`;
+  let guestButtonClass = `drawer-button-empty`;
   let guest = `Add guests`;
 
   if (expand) {
@@ -30,6 +32,12 @@ function Filter({ fullStayList, setStayListState}) {
     setExpand(false);
   }
 
+  if (stayCity === "Add location") {
+    locationButtonClass = `display-button-empty`;
+  } else {
+    locationButtonClass = `display-button`;
+  }
+
   if (adultGuest < 0) {
     setAdultGuest(0);
   }
@@ -38,8 +46,10 @@ function Filter({ fullStayList, setStayListState}) {
   }
   if (totalGuest === 0 ) {
     guest = `Add guests`;
+    guestButtonClass = `display-button-empty`;
   } else {
     guest = `${totalGuest} guests`;
+    guestButtonClass = `display-button`;
   }
 
   useEffect(() => {
@@ -49,6 +59,8 @@ function Filter({ fullStayList, setStayListState}) {
   return (
     <div>
       <Filterbar
+        locationButtonClass={locationButtonClass}
+        guestButtonClass={guestButtonClass}
         fullStayList={fullStayList}
         stayCity={stayCity}
         stayCountry={stayCountry}
@@ -59,6 +71,8 @@ function Filter({ fullStayList, setStayListState}) {
       <div className={overlayClass} onClick={() => setExpand(false)}></div>
       <Filterdrawer
         filterdrawerClass={filterdrawerClass}
+        locationButtonClass={locationButtonClass}
+        guestButtonClass={guestButtonClass}
         setExpand={setExpand}
         fullStayList={fullStayList}
         stayCity={stayCity}

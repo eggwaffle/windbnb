@@ -1,11 +1,5 @@
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
-
 .logo {
-  @apply w-20 md:w-40;
+  @apply w-20 md:w-40 mb-2 lg:mb-0;
 }
 
 .header {

@@ -55,17 +55,33 @@ function Filterdrawer(props) {
       </div>
       <div className = "drawer-bar">
         <div className = "drawer-button-box">
+          <h2>location</h2>
           <Button
-            className = "drawer-button"
+            className = {props.locationButtonClass}
             onClick={showCity}
             buttonContent={props.stayCity + props.stayCountry}
           />
         </div>
         <div className="drawer-button-box">
+          <h2>guests</h2>
           <Button
-            className = "drawer-button"
+            className = {props.guestButtonClass}
             onClick={showNum}
             buttonContent={props.guest}
+          />
+        </div>
+        <div className="drawer-search-container">
+        <Button
+            className = "drawer-search"
+            onClick={props.handleFilter}
+            buttonContent={
+              <div>
+                <span className="material-icons">
+                  search
+                </span>
+                Search
+              </div>
+            }
           />
         </div>
       </div>
@@ -92,7 +108,7 @@ function Filterdrawer(props) {
           />
         </div>
       </div>
-      <div className="drawer-search-container">
+      <div className="drawer-search-container-mobile">
         <Button
             className = "drawer-search"
             onClick={props.handleFilter}
