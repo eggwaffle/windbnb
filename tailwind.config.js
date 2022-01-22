@@ -10,11 +10,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        'gray-333333': '#333333',
+        'gray-A9A9A9': '#A9A9A9',
+        'gray-F2F2F2': '#F2F2F2',
+        'red-EB5757': '#EB5757',
+      },
       fontFamily: {
         'montserrat' : ['Montserrat', 'sans-serif'],
-        'notoSansJP' : ['"Noto Sans JP"', 'sans-serif'],
-        'poppins' : ['Poppins', 'sans-serif'],
-        'ubuntuMono' : ['"Ubuntu Mono"', 'monospace'],
+        'mulish' : ['Mulish', 'sans-serif'],
       },
     },
   },

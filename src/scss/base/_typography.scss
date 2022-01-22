@@ -1,2 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans+JP&family=Poppins&family=Ubuntu+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=mulish&display=swap');
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
+.material-icons {
+  @apply align-middle;
+}

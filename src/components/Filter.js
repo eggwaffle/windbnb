@@ -59,6 +59,7 @@ function Filter({ fullStayList, setStayListState}) {
       <div className={overlayClass} onClick={() => setExpand(false)}></div>
       <Filterdrawer
         filterdrawerClass={filterdrawerClass}
+        setExpand={setExpand}
         fullStayList={fullStayList}
         stayCity={stayCity}
         setStayCity={setStayCity}

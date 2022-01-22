@@ -40,19 +40,36 @@ function Filterdrawer(props) {
   )
   return (
     <div className={props.filterdrawerClass}>
-      <div className="drawer-bar">
+      <div className="drawer-title-bar">
+        <h1 className="drawer-title">
+          Edit your search
+        </h1>
         <Button
-          className = ""
-          onClick={showCity}
-          buttonContent={props.stayCity + props.stayCountry}
+          onClick={() => props.setExpand(false)}
+          buttonContent={
+            <span className="material-icons">
+              close
+            </span>
+          }
         />
-        <Button
-          onClick={showNum}
-          buttonContent={props.guest}
-        />
-        <Button onClick={props.handleFilter} buttonContent={"Search"}/>
       </div>
-      <div>
+      <div className = "drawer-bar">
+        <div className = "drawer-button-box">
+          <Button
+            className = "drawer-button"
+            onClick={showCity}
+            buttonContent={props.stayCity + props.stayCountry}
+          />
+        </div>
+        <div className="drawer-button-box">
+          <Button
+            className = "drawer-button"
+            onClick={showNum}
+            buttonContent={props.guest}
+          />
+        </div>
+      </div>
+      <div className="drawer-settings">
         <div className="option">
           {optionHidden
             ? null
@@ -74,6 +91,20 @@ function Filterdrawer(props) {
             setTotalGuest={props.setTotalGuest}
           />
         </div>
+      </div>
+      <div className="drawer-search-container">
+        <Button
+            className = "drawer-search"
+            onClick={props.handleFilter}
+            buttonContent={
+              <div>
+                <span className="material-icons">
+                  search
+                </span>
+                Search
+              </div>
+            }
+          />
       </div>
     </div>
   )
