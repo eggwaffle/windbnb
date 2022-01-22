@@ -1,6 +1,6 @@
 // https://stackoverflow.com/questions/55028583/how-do-i-call-setstate-from-another-component-in-reactjs
 
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import stays from "../assets/data/stays.json";
 import Footer from "./Footer";
 import Header from "./Header";
